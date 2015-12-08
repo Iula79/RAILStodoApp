@@ -1,0 +1,8 @@
+<h1>Tasks</h1>
+
+   <h2><%if @tasks.empty?%>
+    There are no tasks!
+   <%else%>
+   <%=@tasks.each do |task|%>
+   <%end%>
+    </h2>
