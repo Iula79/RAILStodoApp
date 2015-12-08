@@ -1,8 +1,17 @@
 <h1>Tasks</h1>
 
-   <h2><%if @tasks.empty?%>
-    There are no tasks!
-   <%else%>
-   <%=@tasks.each do |task|%>
-   <%end%>
-    </h2>
+<%if @tasks.empty?%>
+    <h2>There are no tasks!</h2>
+<%else%>
+        <ul>
+            <%@tasks.each do |task|%>
+            <li>
+                <%= task.note %>
+                <%= link_to "Edit", edit_task_path(task) %>
+                <%= link_to "Show", task_path(task) %>
+                <%= link_to "Delete", task_path(task), method: :delete %>
+            </li>
+            <%end%>
+        </ul>
+<%end%>
+<%= link_to "Create a task", new_task_path %>

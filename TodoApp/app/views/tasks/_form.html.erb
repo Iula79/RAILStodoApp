@@ -1,0 +1,7 @@
+<%= form_for @task, html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_field :note %>
+    <%= f.submit %>
+  </div>
+  <%end%>
